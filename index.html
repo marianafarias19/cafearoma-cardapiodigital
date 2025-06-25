@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Aroma - Experiência Premium em Café</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-amber-50 text-gray-800">
+  <!--navbar-->
+  <nav class="bg-amber-900 text-white py-4 px-6 sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+     <a href="#" class="text-2xl font-playfair font-bold">Café Aroma</a>
+     <div class="hidden md:flex space-x-8">
+                <a href="#menu" class="hover:text-amber-200 transition">Menu</a>
+                <a href="#sobre" class="hover:text-amber-200 transition">Sobre</a>
+                <a href="#avaliacoes" class="hover:text-amber-200 transition">Avaliações</a>
+                <a href="#contato" class="hover:text-amber-200 transition">Contato</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="cart-button" class="relative p-2">
+                    <i data-feather="shopping-bag" class="text-white"></i>
+                    <span id="cart-badge" class="badge hidden">0</span>
+                </button>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i data-feather="menu" class="text-white"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-amber-900 mt-4 p-4 rounded-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#menu" class="hover:text-amber-200 transition">Menu</a>
+                <a href="#sobre" class="hover:text-amber-200 transition">Sobre</a>
+                <a href="#avaliacoes" class="hover:text-amber-200 transition">Avaliações</a>
+                <a href="#contato" class="hover:text-amber-200 transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-[70vh] flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4">Café Aroma</h1>
+            <p class="text-xl md:text-2xl mb-8">Desperte seus sentidos com o melhor café da cidade</p>
+            <a href="#menu" class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 rounded-full font-medium transition duration-300 inline-block">Ver Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">Nosso Menu</h2>
+            
+            <!-- Menu Categories -->
+            <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                <div class="overflow-x-auto whitespace-nowrap flex gap-2">
+                    <button class="category-btn bg-amber-700 text-white px-4 py-2 rounded-full" data-category="all">Todos</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="cafe">Cafés</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="milkshake">Milkshakes</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="cookie">Cookies</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="bolo">Bolos</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="croissant">Croissants</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="sanduíches">sanduíches</button>
+                    <button class="category-btn bg-amber-100 text-amber-900 px-4 py-2 rounded-full" data-category="sucos">sucos</button>
+                    
+                    
+                </div>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cafés -->
+                 <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cafe">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/cafe expresso.jpg" alt="Expresso tradicional" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Expresso Tradicional</h3>
+                            <span class="text-amber-700 font-bold">R$ 6,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café puro e intenso, perfeito para os amantes de café forte.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="expresso-tradicional" data-name="Expresso Tradicional" data-price="6.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cafe">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/capuccino.jpg" alt="Cappuccino Cremoso" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Cappuccino Cremoso</h3>
+                            <span class="text-amber-700 font-bold">R$ 9,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café espresso com leite vaporizado e espuma cremosa.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="capuccino-cremoso" data-name="Cappuccino Cremoso" data-price="9.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cafe">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/latte macchiato.jpg" alt="Latte Caramelo" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Latte Caramelo</h3>
+                            <span class="text-amber-700 font-bold">R$ 12,50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café espresso com leite vaporizado e calda de caramelo.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="late-caramelo" data-name="Latte Caramelo" data-price="12.50">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cafe">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/cafe royale.jpg" alt="Café Royale" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Café Royale</h3>
+                            <span class="text-amber-700 font-bold">R$ 15,50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café quente e um toque de conhaque ou outro destilado, finalizada com chantilly.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="cafe-royale" data-name="Cafe Royale" data-price="15.50">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cafe">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/mocha.jpg" alt="Mocha" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Mocha</h3>
+                            <span class="text-amber-700 font-bold">R$ 14,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Café expresso, leite vaporizado e calda de chocolate. </p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="mocha" data-name="Mocha" data-price="14.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
+                <!-- Milkshakes -->
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="milkshake">
+                    <div class="h-96 bg-pink-100 relative overflow-hidden">
+                        <img src="img/oreo.jpg" alt="Milkshake de Oreo" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Milkshake de Oreo</h3>
+                            <span class="text-amber-700 font-bold">R$ 14,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Milkshake cremoso feito com sorvete de baunilha, leite e biscoitos Oreo triturados. </p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="milkshake-oreo" data-name="Milkshake de Oreo" data-price="14.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="milkshake">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/blueberry.jpg" alt="Milkshake de Blueberry" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Milkshake de Blueberry</h3>
+                            <span class="text-amber-700 font-bold">R$ 15,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Milkshake cremoso feito com sorvete de baunilha, leite e blueberries frescos ou em calda.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="milkshake-blueberry" data-name="Milkshake de Blueberry" data-price="15.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="milkshake">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/baunilha.jpg" alt="Milkshake de Baunilha" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Milkshake de Baunilha</h3>
+                            <span class="text-amber-700 font-bold">R$ 14,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Milkshake cremoso feito com sorvete de baunilha, leite gelado e um toque extra de essência de baunilha.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="milkshake-baunilha" data-name="Milkshake de Baunilha" data-price="14.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="milkshake">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/morango.jpg" alt="Milkshake de Morango" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Milkshake de Morango</h3>
+                            <span class="text-amber-700 font-bold">R$ 15,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Milkshake cremoso de morango com pedaços da fruta.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="milkshake-morango" data-name="Milkshake de Morango" data-price="15.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Sucos -->
+                 <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sucos">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/suco de frutas vermelhas.jpg" alt="Suco de frutas vermelhas" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Suco de Frutas Vermelhas</h3>
+                            <span class="text-amber-700 font-bold">5.90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Suco gelado e vibrante feito com frutas vermelhas selecionadas, como amora, framboesa e morango, com um toque de limão e hortelã.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="suco-frutas-vermelhas" data-name="Suco de Frutas Vermelhas" data-price="5.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sucos">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/suco de kiwi.jpg" alt="Suco de Kiwi" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Suco de Kiwi</h3>
+                            <span class="text-amber-700 font-bold">5.90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Suco natural de kiwi, refrescante e levemente cítrico, com sabor suave e marcante. Perfeito para quem busca uma bebida saudável e deliciosa!</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="suco-kiwi" data-name="Suco de Kiwi" data-price="5.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sucos">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/suco de limao siciliano.jpg" alt="Suco de Limão Siciliano" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Suco de Limão Siciliano</h3>
+                            <span class="text-amber-700 font-bold">5.90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Suco leve e aromático, feita com limão-siciliano. Refrescante, com toque cítrico suave e elegante, ideal para os dias quentes!</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="suco-limao" data-name="Suco de Limão Siciliano" data-price="5.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sucos">
+                    <div class="h-96 bg-red-100 relative overflow-hidden">
+                        <img src="img/suco de melancia.jpg" alt="Suco de Melancia" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Suco de Melancia</h3>
+                            <span class="text-amber-700 font-bold">5.90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Refrescante e naturalmente doce, feito com melancia fresca. Uma bebida leve e hidratante, perfeita para matar a sede nos dias quentes!</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="suco-melancia" data-name="Suco de Melancia" data-price="5.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            
+                <!-- Cookies -->
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cookie">
+                    <div class="h-96 bg-amber-100 relative overflow-hidden">
+                        <img src="img/cookie de chocolate.jpg" alt="Cookie de Chocolate" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Cookie de Chocolate</h3>
+                            <span class="text-amber-700 font-bold">R$ 7,50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cookie crocante com gotas de chocolate branco.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="cookie-chocolate" data-name="Cookie de Chocolate" data-price="7.50">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cookie">
+                    <div class="h-96 bg-amber-100 relative overflow-hidden">
+                        <img src="img/cookie de morango.jpg" alt="Cookie de Morango" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Cookie de Baunilha</h3>
+                            <span class="text-amber-700 font-bold">R$ 7,50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cookie macio de baunilha com gotas de chocolate branco.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="cookie-morango" data-name="Cookie de Baunilha" data-price="7.50">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="cookie">
+                    <div class="h-96 bg-amber-100 relative overflow-hidden">
+                        <img src="img/cookie red velvet.jpg" alt="Cookie de Red Velvet" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Cookie de Red Velvet</h3>
+                            <span class="text-amber-700 font-bold">R$ 7,50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cookie de red velvet, coberto com um creme de queijo na forma de rosa. </p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="cookie-red-velvet" data-name="Cookie de Baunilha" data-price="7.50">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+
+                <!-- Bolos -->
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="bolo">
+                    <div class="h-96 bg-yellow-100 relative overflow-hidden">
+                        <img src="img/bolo de chocolate.jpg" alt="Bolo de Chocolate" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Bolo de Chocolate</h3>
+                            <span class="text-amber-700 font-bold">R$ 8,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fatia de bolo de chocolate com cobertura de chocolate.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="bolo-chocolate" data-name="Bolo de Chocolate" data-price="8.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="bolo">
+                    <div class="h-96 bg-yellow-100 relative overflow-hidden">
+                        <img src="img/bolo de red velvet.jpg" alt="Bolo Red Velvet" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Bolo Red Velvet</h3>
+                            <span class="text-amber-700 font-bold">R$ 10,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fatia de bolo red velvet com cobertura de cream cheese.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="bolo-red-velvet" data-name="Bolo Red Velvet" data-price="10.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="bolo">
+                    <div class="h-96 bg-yellow-100 relative overflow-hidden">
+                        <img src="img/bolo de frutas vermelhas.jpg" alt="Bolo de Frutas Vermelhas" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Bolo de Frutas Vermelhas</h3>
+                            <span class="text-amber-700 font-bold">R$ 12,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fatia de bolo de chocolate amargo, recheado com calda de framboesa e decorado com frutas vermelhas.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="bolo-frutas-vermelhas" data-name="Bolo de Frutas Vermelhas" data-price="12.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!--Croissants-->
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="croissant">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/croissant de nutella.jpg" alt="Croissant de Nutella" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Croissant de Nutella</h3>
+                            <span class="text-amber-700 font-bold">R$ 9,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Croissant recheado de nutella, e decorado com calda de chocolate.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="croissant-nutella" data-name="Croissant de Nutella" data-price="9.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="croissant">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/croissant de doce de leite.jpg" alt="Croissant de Doce de Leite" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Croissant de Doce de leite</h3>
+                            <span class="text-amber-700 font-bold">R$ 10,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Croissant recheado de doce de leite, e decorado com calda de doce de leite.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="croissant-doce-de-leite" data-name="Croissant de Doce de Leite" data-price="10.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="croissant">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/croissant com queijo e peito de peru.jpg" alt="Croissant com Queijo e Peito de Perú" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Croissant com Queijo</h3>
+                            <span class="text-amber-700 font-bold">R$ 12,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Croissant tradicional com queijo e peito de Perú.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="croissant-queijo" data-name="Croissant de Peito de Perú" data-price="12.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <!-- Sanduíches -->
+                 <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sanduíches">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/sanduiche de salpicao.jpg" alt="Sanduíche de Salpicão" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Sanduíche de Salpicão</h3>
+                            <span class="text-amber-700 font-bold">R$ 6,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pão macio recheado com salpicão de frango cremoso, cenoura, milho, alface fresquinha e um toque de maionese</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="sanduiche-salpicao" data-name="Sanduíche de Salpicão" data-price="6.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sanduíches">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/sanduiche de avocado.jpg" alt="Torrada de Avocado" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Torrada de Avocado</h3>
+                            <span class="text-amber-700 font-bold">R$ 9,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Duas fatias crocante de pão com camadas de avocado, ovos mexidos e tiras crocantes de bacon.</p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="sanduiche-avocado" data-name="Torrada de Avocado" data-price="9.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="menu-item transition-all duration-300 bg-white rounded-lg overflow-hidden shadow-md" data-category="sanduíches">
+                    <div class="h-96 bg-amber-200 relative overflow-hidden">
+                        <img src="img/sanduiche de queijo.jpg" alt="Sanduíche Quente" class="menu-item-image">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Sanduíche Quente</h3>
+                            <span class="text-amber-700 font-bold">R$ 8,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"> Pão dourado na manteiga, recheado com queijo derretido e presunto, finalizado com ervas aromáticas. </p>
+                        <button class="add-to-cart bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition" data-id="sanduiche-quente" data-name="Sanduíche Quente" data-price="8.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 px-4 bg-amber-800 text-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="rounded-lg overflow-hidden h-80 bg-amber-700 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1" class="feather"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-6">Nossa História</h2>
+                    <p class="mb-4 text-amber-100">O Café Aroma nasceu da paixão por café de qualidade e da vontade de criar um espaço acolhedor onde as pessoas pudessem desfrutar de momentos especiais.</p>
+                    <p class="mb-6 text-amber-100">Fundado em 2010, nosso café se tornou um ponto de encontro para os amantes de café, oferecendo grãos selecionados, preparados com técnica e carinho por baristas especializados.</p>
+                    <div class="flex space-x-4">
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold">12</span>
+                            <span class="text-amber-200">Anos de experiência</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold">5</span>
+                            <span class="text-amber-200">Prêmios</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold">3</span>
+                            <span class="text-amber-200">Unidades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações Section -->
+    <section id="avaliacoes" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">O que nossos clientes dizem</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"O melhor café que já provei! O ambiente é aconchegante e o atendimento é excelente. Os bolos são divinos!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 flex items-center justify-center mr-3">
+                            <span class="text-amber-800 font-semibold">MR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Maria Rodrigues</h4>
+                            <p class="text-sm text-gray-500">Cliente frequente</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star empty">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Os cookies são incríveis! Crocantes por fora e macios por dentro. O cappuccino é perfeito para acompanhar."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 flex items-center justify-center mr-3">
+                            <span class="text-amber-800 font-semibold">JS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">João Silva</h4>
+                            <p class="text-sm text-gray-500">Cliente novo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex mb-4">
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                        <span class="rating-star">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Adoro os milkshakes! São cremosos e deliciosos. O ambiente é perfeito para trabalhar ou estudar."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-amber-200 flex items-center justify-center mr-3">
+                            <span class="text-amber-800 font-semibold">AP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ana Paula</h4>
+                            <p class="text-sm text-gray-500">Cliente há 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button id="add-review-btn" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-full font-medium transition duration-300">Deixe sua avaliação</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 px-4 bg-amber-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Informações</h3>
+                        <div class="mb-4 flex items-center">
+                            <i data-feather="map-pin" class="mr-3 text-amber-700"></i>
+                            <span>Rua do Café, 123 - Centro</span>
+                        </div>
+                        <div class="mb-4 flex items-center">
+                            <i data-feather="phone" class="mr-3 text-amber-700"></i>
+                            <span>(11) 99999-9999</span>
+                        </div>
+                        <div class="mb-4 flex items-center">
+                            <i data-feather="mail" class="mr-3 text-amber-700"></i>
+                            <span>contato@cafearoma.com.br</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Horário de Funcionamento:</h4>
+                            <p>Segunda a Sexta: 7h às 20h</p>
+                            <p>Sábados e Domingos: 8h às 19h</p>
+                        </div>
+                        <div class="flex space-x-4 mt-6">
+                            <a href="#" class="bg-amber-700 text-white p-2 rounded-full">
+                                <i data-feather="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="bg-amber-700 text-white p-2 rounded-full">
+                                <i data-feather="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="bg-amber-700 text-white p-2 rounded-full">
+                                <i data-feather="twitter" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <form class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-full font-medium transition duration-300 w-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-playfair font-bold mb-4">Café Aroma</h3>
+                    <p class="text-amber-200 max-w-xs">Desperte seus sentidos com o melhor café da cidade. Venha nos visitar!</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="text-amber-200 hover:text-white transition">Menu</a></li>
+                        <li><a href="#sobre" class="text-amber-200 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#avaliacoes" class="text-amber-200 hover:text-white transition">Avaliações</a></li>
+                        <li><a href="#contato" class="text-amber-200 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-amber-200 mb-4">Inscreva-se para receber novidades e promoções</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none">
+                        <button class="bg-amber-700 hover:bg-amber-800 px-4 py-2 rounded-r-lg transition">Inscrever</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 mt-8 pt-6 text-center">
+                <p class="text-amber-200">&copy; 2024 Café Aroma. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Seu Carrinho</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i data-feather="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="mb-4">
+                <p id="empty-cart" class="text-gray-500 text-center py-4">Seu carrinho está vazio</p>
+            </div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between mb-4">
+                    <span class="font-semibold">Total:</span>
+                    <span id="cart-total" class="font-bold">R$ 0,00</span>
+                </div>
+                <button id="checkout-btn" class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Deixe sua Avaliação</h3>
+                <button id="close-review" class="text-gray-500 hover:text-gray-700">
+                    <i data-feather="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Sua Avaliação</label>
+                <div class="flex mb-2" id="rating-stars">
+                    <span class="text-3xl cursor-pointer rating-input" data-rating="1">☆</span>
+                    <span class="text-3xl cursor-pointer rating-input" data-rating="2">☆</span>
+                    <span class="text-3xl cursor-pointer rating-input" data-rating="3">☆</span>
+                    <span class="text-3xl cursor-pointer rating-input" data-rating="4">☆</span>
+                    <span class="text-3xl cursor-pointer rating-input" data-rating="5">☆</span>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="review-name" class="block text-gray-700 mb-2">Nome</label>
+                <input type="text" id="review-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+            </div>
+            <div class="mb-4">
+                <label for="review-text" class="block text-gray-700 mb-2">Comentário</label>
+                <textarea id="review-text" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+            </div>
+            <button id="submit-review" class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full w-full transition">Enviar Avaliação</button>
+        </div>
+    </div>
+
+    <!-- Checkout Success Modal -->
+    <div id="checkout-success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full text-center">
+            <div class="text-green-500 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Pedido Realizado com Sucesso!</h3>
+            <p class="text-gray-600 mb-6">Obrigado por escolher o Café Aroma. Seu pedido foi recebido e está sendo preparado.</p>
+            <button id="close-success" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-full transition">Continuar</button>
+        </div>
+    </div>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>
